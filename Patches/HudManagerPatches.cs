@@ -51,7 +51,7 @@ public class HudManagerPatches
             CreateButtonAndroid();
         else
             __instance.Chat.AddChatWarning(
-                "<size=125%>Thanks for downloading Emotes Mod!</size>\nTo open the emote wheel, press Control + E!");
+                "<size=130%>Thanks for downloading Emotes Mod!</size>\nTo open the emote wheel, press Control + E!");
     }
 
     private static void LazyInstantiateHud()
