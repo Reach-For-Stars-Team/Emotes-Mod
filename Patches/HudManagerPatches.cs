@@ -1,5 +1,6 @@
 using System;
 using EmotesMod.Modules.Components;
+using EmotesMod.Networking;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,7 +41,7 @@ public class HudManagerPatches
 
         if ( /*ReInput.players.GetPlayer(0).GetButtonDown(InputPatches.StopEmotingBind.id)*/
             Input.GetKeyDown(KeyCode.X) && PlayerControl.LocalPlayer.GetComponent<EmoteBehaviour>().currentEmote)
-            Networking.RpcStopEmote();
+            NetworkingLegacy.RpcStopEmote();
     }
 
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
@@ -63,7 +64,7 @@ public class HudManagerPatches
         _emoteCanvas.transform.GetChild(1).gameObject.SetActive(false);
         _emoteCanvas.transform.GetChild(1).GetChild(1).GetComponent<Button>().onClick.AddListener(new Action(() =>
         {
-            Networking.RpcStopEmote();
+            PlayerControl.LocalPlayer.RpcCancelEmote();
             _emoteCanvas.transform.GetChild(1).gameObject.SetActive(false);
         }));
     }

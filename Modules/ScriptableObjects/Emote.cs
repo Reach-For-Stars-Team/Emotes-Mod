@@ -10,10 +10,11 @@ namespace EmotesMod.Modules.Components
 {
     public class Emote(IntPtr ptr) : ScriptableObject(ptr)
     {
-        public Il2CppReferenceField<AnimationClip> anim;
-        public Il2CppReferenceField<Sprite> emoteIcon;
-        //Temp solution, will need to find a better way.
-        public bool playLooped => name.Contains("loop");
-        public bool canMove => name.Contains("moveable");
+        public Il2CppReferenceField<AnimationClip> Animation;
+        public Il2CppReferenceField<Sprite> EmoteIcon;
+        public Il2CppValueField<bool> PlayLooped;
+        public Il2CppValueField<bool> CanMove;
+        public Il2CppReferenceField<Sprite> PointerSprite;
+        public Il2CppValueField<bool> PointerUsesPlayerColor;
     }
 }

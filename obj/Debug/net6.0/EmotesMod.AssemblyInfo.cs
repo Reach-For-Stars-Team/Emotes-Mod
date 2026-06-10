@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Mod generated using Reactor Template")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-dev+5e5e152643b955b51f28575c37a37654d17f7da9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-dev+b86d808d46373cfae43adcb7ecf04d18ee3b09d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmotesMod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmotesMod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using EmotesMod;
 using EmotesMod.Modules.Components;
+using EmotesMod.Networking;
 using EmotesMod.Patches;
 using Il2CppInterop.Runtime.InteropTypes.Fields;
 using PowerTools;
@@ -21,7 +22,8 @@ namespace EmotesMod.Modules.Components
 
         public void OnClick()
         {
-            Networking.RpcPlayEmote(Emote.Value.name);
+            //NetworkingLegacy.RpcPlayEmote(Emote.Value.name);
+            PlayerControl.LocalPlayer.RpcEmote(Emote.Value.name);
             HudManagerPatches.EmoteCanvas.transform.GetChild(0).gameObject.SetActive(false);
             SoundManager.Instance.PlaySound(HudManager.Instance.MapButton.ClickSound, false);
         }
@@ -35,7 +37,7 @@ namespace EmotesMod.Modules.Components
                 return;
             }
 
-            icon.Value.sprite = Emote.Value.emoteIcon;
+            icon.Value.sprite = Emote.Value.EmoteIcon;
             icon.Value.material = new(HatManager.Instance.PlayerMaterial);
             PlayerMaterial.SetColors(new Color(0.7f, 0.7f, 0.8f, 1), icon.Value.material);
         }
